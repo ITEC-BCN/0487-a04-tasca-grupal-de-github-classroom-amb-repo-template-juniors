@@ -39,6 +39,9 @@ fun main(){
     // Inicialitzem la matriu de partides files i (tiradesPerPartida + 1) columnes
     tiradesGuardades = Array(partides){IntArray((tiradesPerPartida + 1)) }
 
+    //Aqui necesitamos un contador per calcular el percentatge ganadas
+    var partidesGuanyades = 0
+
     // Repetim tantes vegades com partides
     for(partida in 0 until partides) {
         var acumuladorCPU: Int = 0
@@ -66,10 +69,13 @@ fun main(){
 
         if (tiradesGuardades[partida][tiradesPerPartida] > acumuladorCPU){
             println("Has guanyat!")
+            partidesGuanyades++
         }else if (tiradesGuardades[partida][tiradesPerPartida] < acumuladorCPU){
             println("Has perdut!")
         }else{
             println("Heu empatat!")
         }
     }
+    val percentatgeGuanyat = (partidesGuanyades.toDouble()/partides)*100
+    println("Percentatge de partides guanyades: ${"%.2f".format(percentatgeGuanyat)}%")
 }
