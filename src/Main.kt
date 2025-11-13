@@ -45,6 +45,7 @@ fun main(){
     // Declarem la matriu
     var tiradesGuardades: Array<IntArray>
 
+
     // Inicialitzem la matriu de partides files i (tiradesPerPartida + 1) columnes
     tiradesGuardades = Array(partides!!){IntArray((tiradesPerPartida!! + 1)) }
 
@@ -68,7 +69,7 @@ fun main(){
             // Acumulem el sumatori a l'última columna de la fila
             tiradesGuardades[partida][tiradesPerPartida] += tiradaActual
 
-            println("--------------------------------------------------")
+            println("-----------------------------------------")
 
             /** Tirades CPU **/
             val tiradaCPU = Random.nextInt(1, 6 + 1)
@@ -77,6 +78,9 @@ fun main(){
         }
 
         println("Partida acabada!")
+        println("=========================================")
+        println("RESULTATS: \n")
+
         println("Tu has aconseguit ${tiradesGuardades[partida][tiradesPerPartida]} punts")
         println("La CPU ha aconseguit $acumuladorCPU punts")
 
@@ -91,4 +95,5 @@ fun main(){
     }
     val percentatgeGuanyat = (partidesGuanyades.toDouble()/partides)*100
     println("Percentatge de partides guanyades: ${"%.2f".format(percentatgeGuanyat)}%")
+    println("=========================================")
 }
