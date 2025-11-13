@@ -7,6 +7,15 @@ fun main(){
     var partides: Int?
     var tiradesPerPartida: Int?
 
+    //TASCA 3: Millora de la interfície (UI) amb capçeleres
+    println("=========================================")
+    println("         JOC DELS DAUS - KOTLIN          ")
+    println("=========================================")
+    println("Normes: La suma dels teus daus ha de ser ")
+    println("superior a la de la CPU per guanyar.")
+    println("-----------------------------------------")
+
+
     println(DAUS)
     println("Benvingut/da al joc dels daus.\nPer guanyar cada partida, la suma dels punts de les teves tirades dels teus daus ha de ser superior a la de la CPU")
     println(DAUS)
@@ -59,8 +68,12 @@ fun main(){
             // Acumulem el sumatori a l'última columna de la fila
             tiradesGuardades[partida][tiradesPerPartida] += tiradaActual
 
+            println("--------------------------------------------------")
+
             /** Tirades CPU **/
-            acumuladorCPU += Random.nextInt(1, 6 + 1)
+            val tiradaCPU = Random.nextInt(1, 6 + 1)
+            println("La CPU ha tret un ${CARES_DAU[tiradaCPU-1]}!")
+            acumuladorCPU += tiradaCPU
         }
 
         println("Partida acabada!")
