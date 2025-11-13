@@ -25,7 +25,7 @@ fun main(){
     // Llegim el número de quantes tirades volem fer per cada partida
     do {
         println("Quantes tirades vols fer per cada partida? (de 1 a 6)")
-        tiradesPerPartida = readLine()?.toIntOrNull()
+        tiradesPerPartida = readln()?.toIntOrNull()
 
         if (tiradesPerPartida != null && (tiradesPerPartida < 1 || tiradesPerPartida > 6)){
             tiradesPerPartida = null
@@ -37,7 +37,7 @@ fun main(){
     var tiradesGuardades: Array<IntArray>
 
     // Inicialitzem la matriu de partides files i (tiradesPerPartida + 1) columnes
-    tiradesGuardades = Array(partides){IntArray((tiradesPerPartida + 1)) }
+    tiradesGuardades = Array(partides!!){IntArray((tiradesPerPartida!! + 1)) }
 
     //Aqui necesitamos un contador per calcular el percentatge ganadas
     var partidesGuanyades = 0
